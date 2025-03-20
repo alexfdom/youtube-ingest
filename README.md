@@ -6,18 +6,6 @@ The backend leverages the power of both the [`youtube_transcript_api`](https://g
 
 For videos where the transcript is not directly available on YouTube, we utilize [`whisper`](https://github.com/openai/whisper) to extract the audio and subsequently obtain its transcription.
 
-## Build and Run
+## Railway Deployment
 
-Build the Docker Image:
-
-```bash
-docker build -t youtube-ingest-app .
-````
-
-Run the Docker Container:
-
-```bash
-docker run -p 5001:5001 youtube-ingest-app
-```
-
-The application will be accessible on port 5001.
+Webpage: 

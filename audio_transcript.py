@@ -8,6 +8,7 @@ def audio_transcript(video_url):
     ydl_opts = {
         'format': 'bestaudio/best',
         'outtmpl': 'video_audio.%(ext)s',
+        'postprocessor_args': ['-ss', '0', '-t', '30'],
         # 'ffmpeg_location': '/usr/local/bin/ffmpeg',
         'postprocessors': [{
             'key': 'FFmpegExtractAudio',
