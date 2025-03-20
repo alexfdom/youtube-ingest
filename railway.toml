@@ -4,5 +4,5 @@ dockerfilePath = "Dockerfile.railway"
 
 [deploy]
 healthcheckPath = "/ping"
-restartPolicyMaxRetries = 10
+restartPolicyMaxRetries = 5
 restartPolicyType = "ON_FAILURE"

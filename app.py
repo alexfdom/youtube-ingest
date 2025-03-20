@@ -1,4 +1,4 @@
-from fasthtml.common import fast_app, serve
+from fasthtml.common import fast_app
 from youtube_transcript_api import YouTubeTranscriptApi, TranscriptsDisabled, NoTranscriptFound, VideoUnavailable
 from starlette.responses import HTMLResponse
 from starlette.requests import Request
@@ -6,6 +6,7 @@ import os
 from audio_transcript import audio_transcript
 from ytb_utils import extract_video_id, get_description
 from jinja2 import Environment, FileSystemLoader
+import uvicorn
 
 env = Environment(loader=FileSystemLoader('templates'))
 
@@ -31,7 +32,6 @@ async def index(request: Request):
         transcript = None
         
         try:
-            # Always try to get the video description first
             description_content = get_description(video_url)
         except Exception:
             description_content = "No description available."
@@ -86,5 +86,5 @@ async def ping(request: Request):
 
 if __name__ == "__main__":
     port = int(os.getenv("PORT", 5001))
-    serve(port=port)
+    uvicorn.run("app:app", host="0.0.0.0", port=port, reload=False)
 
