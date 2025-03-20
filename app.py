@@ -80,6 +80,10 @@ async def index(request: Request):
 
     return HTMLResponse(html_content)
 
+@rt('/ping', methods=['GET'])
+async def ping(request: Request):
+    return HTMLResponse("OK", status_code=200)
+
 if __name__ == "__main__":
     port = int(os.getenv("PORT", 5001))
     serve(port=port)
