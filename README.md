@@ -8,4 +8,4 @@ For videos where the transcript is not directly available on YouTube, we utilize
 
 ## Railway Deployment
 
-Webpage: 
+This branch enables deployment via Railway's cloud infrastructure.
