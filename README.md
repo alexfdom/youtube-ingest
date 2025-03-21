@@ -6,6 +6,8 @@ The backend leverages the power of both the [`youtube_transcript_api`](https://g
 
 For videos where the transcript is not directly available on YouTube, we utilize [`whisper`](https://github.com/openai/whisper) to extract the audio and subsequently obtain its transcription.
 
+![img](rdm-images/ytb-ingest.gif)
+
 ## Build and Run
 
 Build the Docker Image:
