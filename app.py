@@ -11,7 +11,7 @@ import uvicorn
 env = Environment(loader=FileSystemLoader('templates'))
 
 PREVIEW_COMMENT = (
-    "<strong><span style='color: red;'>Preview Mode:</span></strong> Below is a 30-second sample transcript extracted from your video. "
+    "<strong><span style='color: red;'>Preview Mode:</span></strong> Below is a 2-second sample transcript extracted from your video. "
     "<strong>To view the full transcript, please visit our GitHub repository using the link in the top right corner and build the project locally.</strong><br><br>"
 )
 
