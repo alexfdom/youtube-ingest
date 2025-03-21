@@ -23,3 +23,16 @@ docker run -p 5001:5001 youtube-ingest-app
 ```
 
 The application will be accessible on port 5001.
+
+## Contributing
+
+## Contributing
+
+You can contribute to YouTube Ingest in various ways:
+
+- **Provide Feedback:**  
+  [Create an issue](https://github.com/alexfdom/youtube-ingest/issues/new) on GitHub to suggest new features or report bugs.
+
+- **Share the Project:**  
+  Spread the word about YouTube Ingest with anyone who might find it useful.
+
