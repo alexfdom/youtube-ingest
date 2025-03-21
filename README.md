@@ -26,8 +26,6 @@ The application will be accessible on port 5001.
 
 ## Contributing
 
-## Contributing
-
 You can contribute to YouTube Ingest in various ways:
 
 - **Provide Feedback:**  
