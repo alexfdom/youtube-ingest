@@ -11,8 +11,8 @@ import uvicorn
 env = Environment(loader=FileSystemLoader('templates'))
 
 PREVIEW_COMMENT = (
-    "<strong><span style='color: red;'>Preview Mode:</span></strong>"
-    "<strong>To view the full transcript, please visit our GitHub repository using the link in the top right corner and build the project locally.</strong><br><br>"
+    "<strong><span style='color: red;'>Preview Mode:</span></strong> 🏗️ Audio extraction for videos without transcriptions is not implemented on the web. "
+    "<strong>However, if you build the project locally using our GitHub repository (link in the top right corner), this feature will be available.</strong><br><br>"
 )
 
 app, rt = fast_app()
