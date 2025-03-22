@@ -11,7 +11,7 @@ import uvicorn
 env = Environment(loader=FileSystemLoader('templates'))
 
 PREVIEW_COMMENT = (
-    "<strong><span style='color: red;'>Preview Mode:</span></strong> Below is a 2-second sample transcript extracted from your video. "
+    "<strong><span style='color: red;'>Preview Mode:</span></strong>"
     "<strong>To view the full transcript, please visit our GitHub repository using the link in the top right corner and build the project locally.</strong><br><br>"
 )
 
@@ -40,7 +40,7 @@ async def index(request: Request):
             try:
                 description_content = get_description(video_url)
                 transcript_html = PREVIEW_COMMENT
-                transcript_html += audio_transcript(video_url)
+                # transcript_html += audio_transcript(video_url)
 
             except Exception:
                 error_message = "Invalid URL."
