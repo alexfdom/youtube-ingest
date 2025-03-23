@@ -230,7 +230,6 @@
         const content = document.getElementById('transcript-content').innerText;
         navigator.clipboard.writeText(content);
         
-        // Show temporary notification
         const notification = document.createElement('div');
         notification.textContent = 'Copied to clipboard!';
         notification.style.position = 'fixed';
