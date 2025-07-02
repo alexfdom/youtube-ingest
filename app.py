@@ -21,10 +21,17 @@ app, rt = fast_app()
 
 
 def fetch_preferred_transcript(video_id: str, languages=("en", "fr", "es", "it")):
+    if "&" in video_id:
+        video_id = video_id.split("&")[0]
+    
     api = YouTubeTranscriptApi()
     try:
         transcript_list = api.list(video_id)
-        transcript = transcript_list.find_transcript(list(languages))
+        try:
+            transcript = transcript_list.find_generated_transcript(list(languages))
+        except NoTranscriptFound:
+            transcript = transcript_list.find_transcript(list(languages))
+            
         return transcript.fetch()
     except (
         NoTranscriptFound,
@@ -41,14 +48,17 @@ def fetch_preferred_transcript(video_id: str, languages=("en", "fr", "es", "it")
 
 def get_video_transcript(video_id, preferred_languages=None):
     """Return a FetchedTranscript (library v1.1.0) or None if not available."""
+    if "&" in video_id:
+        video_id = video_id.split("&")[0]
+
     api = YouTubeTranscriptApi()
     try:
-        languages = preferred_languages or ["en"]
+        languages = preferred_languages
         transcript_list = api.list(video_id)
         transcript = transcript_list.find_transcript(languages)
         fetched = transcript.fetch()
     except NoTranscriptFound:
-        return f"No transcripts found for languages {preferred_languages or ['en']}."
+        return f"No transcripts found for languages {preferred_languages}."
     except TranscriptsDisabled:
         return "Transcripts are disabled for this video."
     except VideoUnavailable:
